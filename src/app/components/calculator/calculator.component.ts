@@ -20,16 +20,16 @@ export class CalculatorComponent implements OnInit{
         DOB: [''],
         age: [''],
         HN: [''],
-        weight: ['',[Validators.required, Validators.minLength(1)]],
+        weight: [''],
         prescriber:[''],
        });
-      
+      //  ,[Validators.required, Validators.minLength(1)]
      }
     
    save(){
       console.log(this.myForm.value);
       this.formService.storeData(this.myForm.value);
-      this.router.navigate(['resus_drug']);
+      this.router.navigate(['arrythmias']);
    }
 
   //  next(){
