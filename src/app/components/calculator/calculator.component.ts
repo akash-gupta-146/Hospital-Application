@@ -29,7 +29,7 @@ export class CalculatorComponent implements OnInit{
    save(){
       console.log(this.myForm.value);
       this.formService.storeData(this.myForm.value);
-      this.router.navigate(['arrythmias']);
+      this.router.navigate(['resus_drug']);
    }
 
   //  next(){

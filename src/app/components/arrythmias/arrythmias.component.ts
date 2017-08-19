@@ -13,231 +13,223 @@ export class ArrythmiasComponent implements OnInit,  AfterViewInit{
     constructor(private _location: Location, private formService: FormService){
 
     }
+    data: any;
+    ngOnInit(){  
+         this.data = this.formService.getValue(); 
+    }
+            
+    calculate1(getWeight){
+        if(getWeight*0.1< 3)
+            return getWeight*0.1;
+        else 
+            return 3;
+    }
+    calculate2(getWeight){
+        if(getWeight*0.1<6)
+            return getWeight*0.2;
+        else 
+            return 6;
+    }
 
     ngAfterViewInit(){
         var canvas, context, canvaso, contexto;
         canvaso = document.getElementById('imageView');
         context = canvaso.getContext('2d');
-        context.lineWidth = 5;
-        
+        context.lineWidth = 5;        
         context.lineWidth = 1;
+      
  // First Flow Chart 
-        context.strokeStyle = '#000000';
-        context.beginPath();
-        context.moveTo(82, 53);
-        context.lineTo(168, 53);
-        context.stroke();
-        context.closePath();
-        
-        context.strokeStyle = '#000000';
-        context.beginPath();
-        context.moveTo(166, 53);
-        
-        context.strokeStyle = '#000000';
-        context.beginPath();
-        context.moveTo(168, 52);
-        context.lineTo(168, 20);
-        context.stroke();
-        context.closePath();
-        
-        context.strokeStyle = '#000000';
-        context.beginPath();
-        context.moveTo(83, 52);
-        context.lineTo(91, 42);
-        context.stroke();
-        context.closePath();
-        
-        context.strokeStyle = '#000000';
-        context.beginPath();
-        context.moveTo(83, 51);
-        context.lineTo(90, 61);
-        context.stroke();
+        context.font = "15px Arial";
+        context.fillText(" SHOCKABLE RHYTHM ", 60, 15)
+        context.fillText("Ventricular Fibrillation and",35, 50)
+        context.fillText("Pulseless Ventricular Tachycardia ",35, 70)
         context.closePath();
         
         // rect 1
         context.strokeStyle = '#000000';
-        context.strokeRect(29, 93, 180, 64);
-        context.fillText("DC SHOCK 4 J/KG", 35, 110, 180, 64)
-        context.fillText(this.data.Rweight*4, 39, 125, 180, 74 ),
-        context.fillText("Estimated Joules"  , 45, 125, 180, 74 ),
+        context.strokeRect(29, 93, 210, 74);
+        context.font = "13px Arial";
+        context.fillText("DC SHOCK 4 J/KG", 40, 115)
+        context.fillText(this.data.Rweight*4, 35,140),
+        context.fillText("Estimated Joules"  , 66, 140),
 
         context.strokeStyle = '#000000';
         context.beginPath();
-        context.moveTo(110, 161);
-        context.lineTo(110, 225);
+        context.moveTo(112, 165);
+        context.lineTo(112, 228);
         context.stroke();
         context.closePath();
-        
-        // context.strokeStyle = '#000000';
-        // context.beginPath();
-        // context.moveTo(87, 217);
-        // context.lineTo(77, 209);
-        // context.stroke();
-        // context.closePath();
-        
-        // context.strokeStyle = '#000000';
-        // context.beginPath();
-        // context.moveTo(87, 217);
-        // context.lineTo(96, 209);
-        // context.stroke();
-        // context.closePath();
+
+        context.font = "12px Arial";
+        context.fillText("2 min CPR" , 130, 185 ),
+        context.fillText("check monitor" , 130, 200 ),
+
         
         // rect 2
         context.strokeStyle = '#000000';
-        context.strokeRect(29, 229, 180, 61);
+        context.strokeRect(29, 229, 210, 74);
+        context.fillText("DC SHOCK 4 J/KG",   40, 255),
+        context.fillText(this.data.Rweight*4, 35, 280),
+        context.fillText("Estimated Joules" , 66, 280),
+
+        context.strokeStyle = '#000000';
+        context.beginPath();
+        context.moveTo(110, 298);
+        context.lineTo(110, 360);
+        context.stroke();
+        context.closePath();
+
+        context.fillText("2 min CPR" , 130, 320 ),
+        context.fillText("check monitor" , 130, 335 ),
         
         context.strokeStyle = '#000000';
         context.beginPath();
-        context.moveTo(110, 293);
-        context.lineTo(110, 348);
+        context.moveTo(110, 440);
+        context.lineTo(110, 480);
         context.stroke();
         context.closePath();
         
-        // context.strokeStyle = '#000000';
-        // context.beginPath();
-        // context.moveTo(87, 340);
-        // context.lineTo(79, 332);
-        // context.stroke();
-        // context.closePath();
-        
-        // context.strokeStyle = '#000000';
-        // context.beginPath();
-        // context.moveTo(88, 339);
-        // context.lineTo(95, 333);
-        // context.stroke();
-        // context.closePath();
+        context.fillText("2 min CPR" , 130, 455 ),
+        context.fillText("check monitor" , 130, 475 ),
+
+ 
         
         // rect 3
         context.strokeStyle = '#000000';
-        context.strokeRect(29, 352, 180, 62);
-        
+        context.strokeRect(29, 358, 210, 74);
+        context.fillText("Epinephrine then DC",  40, 378),
+        context.fillText("SHOCK 4 J/KG" , 40, 397),
+        context.fillText(this.data.Rweight*4, 35, 415),
+        context.fillText("Estimated Joules", 66, 415,),
+
         context.strokeStyle = '#000000';
         context.beginPath();
-        context.moveTo(110, 418);
-        context.lineTo(110, 479);
+        context.moveTo(110, 435);
+        context.lineTo(110, 500);
         context.stroke();
         context.closePath();
         
-        // context.strokeStyle = '#000000';
-        // context.beginPath();
-        // context.moveTo(88, 474);
-        // context.lineTo(78, 463);
-        // context.stroke();
-        // context.closePath();
-        
-        // context.strokeStyle = '#000000';
-        // context.beginPath();
-        // context.moveTo(90, 472);
-        // context.lineTo(98, 464);
-        // context.stroke();
-        // context.closePath();
 
 
         // rect 4
         context.strokeStyle = '#000000';
-        context.strokeRect(29, 480, 180, 62);
+        context.strokeRect(29, 500, 210, 74);
+        context.fillText("Amiodarone then DC",  40, 520),
+        context.fillText("SHOCK 4 J/KG" , 40, 540),
+        context.fillText(this.data.Rweight*4, 35, 560),
+        context.fillText("Estimated Joules" , 66, 560,),
+        context.fillText("2 min CPR" , 130, 600 ),
+        context.fillText("check monitor" , 130, 620 ),
+        
 
         context.strokeStyle = '#000000';
         context.beginPath();
-        context.moveTo(110, 550);
-        context.lineTo(110, 550);
+        context.moveTo(110, 574);
+        context.lineTo(110, 640);
         context.stroke();
         context.closePath();
 
 
         // rect 5
         context.strokeStyle = '#000000';
-        context.strokeRect(29, 580, 180, 62);
-
-        context.strokeStyle = '#000000';
-        context.beginPath();
-        context.moveTo(110, 660);
-        context.lineTo(110, 660);
-        context.stroke();
-        context.closePath();
-
-       
-        context.lineWidth = 2;
+        context.strokeRect(29, 640, 210, 74);
+        context.fillText("Epinephrine then DC",  40, 660),
+        context.fillText("SHOCK 4 J/KG" , 40, 680),
+        context.fillText(this.data.Rweight*4, 35, 700),
+        context.fillText("Estimated Joules" , 66, 700),
+        context.fillText("2 min CPR" , 130, 735 ),
+        context.fillText("check monitor" , 130, 750 ),
         
         // rect 6
         context.strokeStyle = '#000000';
-        context.strokeRect(29, 700, 180, 62);
-        
-        // context.strokeStyle = '#000000';
-        // context.beginPath();
-        // context.moveTo(350, 100);
-        // context.lineTo(350, 100);
-        // context.stroke();
-        // context.closePath();
+        context.strokeRect(29, 780, 210, 74);
+        context.fillText("DC SHOCK 4 J/KG",   50, 800),
+        context.fillText(this.data.Rweight*4, 35, 820),
+        context.fillText("Estimated Joules" , 66, 820),
+
+
+        context.strokeStyle = '#000000';
+        context.beginPath();
+        context.moveTo(110, 715);
+        context.lineTo(110, 780);
+        context.stroke();
+        context.closePath();
         
         context.strokeStyle = '#000000';
         context.beginPath();
-        context.moveTo(157, 800);
+        context.moveTo(240, 800);
         context.lineTo(290, 800);
         context.stroke();
         context.closePath();
         
-        context.strokeStyle = '#000000';
-        context.beginPath();
-        context.moveTo(290, 820);
-        context.lineTo(290, 650);
-        context.stroke();
-        context.closePath();
+       
         
         // rect 7
         context.strokeStyle = '#000000';
-        context.strokeRect(256, 600, 71, 44);
+        context.strokeRect(256, 600, 99, 60);
+        context.fillText("2 min CPR", 262, 620, 71, 44),
+        context.fillText("Check Monitor", 262, 634,78, 44),
         
         context.strokeStyle = '#000000';
         context.beginPath();
-        context.moveTo(290, 600);
-        
-        context.lineTo(289, 500);
+        context.moveTo(290, 600);  
+        context.lineTo(289, 530);
         context.stroke();
         
-        
-        // context.strokeStyle = '#000000';
-        // context.beginPath();
-        // context.moveTo(289, 316);
-        // context.lineTo(288, 254);
-        // context.stroke();
-        // context.closePath();
-        
-        // context.strokeStyle = '#000000';
-        // context.beginPath();
-        // context.moveTo(290, 254);
-        
         context.strokeStyle = '#000000';
         context.beginPath();
-        context.moveTo(290, 500);
-        context.lineTo(235, 500);
+        context.moveTo(290, 530);
+        context.lineTo(240, 530);
+        context.stroke();
+        context.closePath();
+
+        context.strokeStyle = '#000000';
+        context.beginPath();
+        context.moveTo(290, 800);
+        context.lineTo(290, 660);
         context.stroke();
         context.closePath();
         // last box
 
-//First Chart End
+// First Chart End
+
+
+
+
+
+
 
 // Second Flow Chart
 
 // FIRST RECT
+
+context.fillText("Supraventricular Tachycardia", 500,10),
+
+
+
 context.strokeStyle = '#000000';
-context.strokeRect(550, 12, 147, 53);
+context.strokeRect(550, 25, 147, 53);
+
+context.fillText("Shock", 570, 50),
+context.fillText("Present", 570, 70),
+
+
 
 // SECOND RECT
 context.strokeStyle = '#000000';
-context.strokeRect(450, 25, 57, 33);
-
+context.strokeRect(450, 40, 57, 33);
+context.fillText("No", 464, 60),
 
 context.strokeStyle = '#000000';
 context.beginPath();
-context.moveTo(550, 40);
-context.lineTo(506, 40);
+context.moveTo(550, 55);
+context.lineTo(506, 55);
 context.stroke();
 context.closePath();
 
 context.strokeStyle = '#000000';
 context.beginPath();
-context.moveTo(478, 57);
+context.moveTo(478, 72);
 context.lineTo(478, 110);
 context.stroke();
 context.closePath();
@@ -245,18 +237,19 @@ context.closePath();
 
 // THIRD 
 context.strokeStyle = '#000000';
-context.strokeRect(750, 25, 57, 33);
+context.strokeRect(750, 40, 57, 33);
+context.fillText("yes", 765, 60),
 
 context.strokeStyle = '#000000';
 context.beginPath();
-context.moveTo(750, 40);
-context.lineTo(700, 40);
+context.moveTo(750, 55);
+context.lineTo(700, 55);
 context.stroke();
 context.closePath();
 
 context.strokeStyle = '#000000';
 context.beginPath();
-context.moveTo(777, 57);
+context.moveTo(777, 72);
 context.lineTo(777, 110);
 context.stroke();
 context.closePath();
@@ -266,14 +259,18 @@ context.closePath();
 // FOURTH 
 context.strokeStyle = '#000000';
 context.strokeRect(425, 110, 100, 47);
+context.fillText("Vagal", 435, 130),
+context.fillText("Manoeuvres", 435, 146),
 
 // FIFTH 
 context.strokeStyle = '#000000';
 context.strokeRect(730, 110, 100, 47);
+context.fillText("Iv Access", 745, 135),
 
 // 6th
 context.strokeStyle = '#000000';
 context.strokeRect(740, 195, 77, 36);
+context.fillText("yes", 625, 135),
 
 context.strokeStyle = '#000000';
 context.beginPath();
@@ -285,6 +282,7 @@ context.closePath();
 // 7th
 context.strokeStyle = '#000000';
 context.strokeRect(600, 115, 58, 31);
+context.fillText("No", 757, 216),
 
 context.strokeStyle = '#000000';
 context.beginPath();
@@ -303,6 +301,10 @@ context.closePath();
 
 context.strokeStyle = '#000000';
 context.strokeRect(380, 260, 230, 77);
+context.fillText("Adenosine", 430, 290),
+context.fillText(this.calculate1(this.data.Rweight), 430, 310),
+context.fillText("mg", 450, 310),
+context.fillText("100microgram/kg", 430, 330),
 
 // 9th
 context.strokeStyle = '#000000';
@@ -328,6 +330,10 @@ context.closePath()
 
 context.strokeStyle = '#000000';
 context.strokeRect(680, 260, 230, 77);
+context.fillText("Synchronous DC shock", 710, 290),
+context.fillText(this.data.Rweight*0.5, 710, 310),
+context.fillText("J/Kg", 730, 310),
+context.fillText("100microgram/kg", 710, 330),
 
 // 10 th
 context.strokeStyle = '#000000';
@@ -346,13 +352,26 @@ context.closePath();
 
 context.strokeStyle = '#000000';
 context.strokeRect(380, 379, 230, 77); 
+context.fillText("Adenosine", 420, 405),
+context.fillText(this.calculate2(this.data.Rweight), 420, 425),
+context.fillText("mg", 455, 425),
+context.fillText("100microgram/kg", 420, 445),
+
 // 11th
 context.strokeStyle = '#000000';
 context.strokeRect(680, 379, 230, 77);
-
+context.fillText("CONSIDER Synchronous ", 390, 770),
+context.fillText("DC shock",390,790),
+context.fillText("(see warning!) PLEASE ", 390, 810),
+context.fillText("D/W CARDIOLOGY",390,830),
+context.fillText("PRIOR TO USING:-  Verapamil",  390, 850),
+context.fillText("Amiodarone Flecainide",390, 870),
+context.fillText("Propranolol Digoxin",390,890),
 // 12th 
 context.strokeStyle = '#000000';
 context.strokeRect(380, 500, 230, 77); 
+context.fillText("Do NOT exceed adenosine ", 395, 665),
+context.fillText("maximum single dose 12mg", 395, 685),
 
 context.strokeStyle = '#000000';
 context.beginPath();
@@ -364,6 +383,9 @@ context.closePath();
 // 13th 
 context.strokeStyle = '#000000';
 context.strokeRect(680, 500, 230, 77);
+context.fillText("Synchronous DC shock 1J/kg", 683, 420),
+context.fillText(this.data.Rweight*1, 685, 440),
+context.fillText("Estimated Joules ", 705, 440),
 
 context.strokeStyle = '#000000';
 context.beginPath();
@@ -371,14 +393,157 @@ context.moveTo(777, 460);
 context.lineTo(777, 500);
 context.stroke();
 context.closePath();
-// Second Flow Chart End
-    }
 
-    data: any;
-    ngOnInit(){  
-        this.formService.getValue();
-        this.data= this.formService.getValue(); 
-    }
+// repeating rect 
+context.strokeStyle = '#000000';
+context.strokeRect(800, 600, 135, 60);
+context.fillText("Consider", 815, 620),
+context.fillText("using", 815, 635),
+context.fillText("antiarrhythmics", 815, 650),
+
+
+context.strokeStyle = '#000000';
+context.beginPath();
+context.moveTo(777, 580);
+context.lineTo(777, 670);
+context.stroke();
+context.closePath();
+
+context.strokeStyle = '#000000';
+context.beginPath();
+context.moveTo(777, 670);
+context.lineTo(960, 670);
+context.stroke();
+context.closePath();
+
+context.beginPath();
+context.moveTo(960, 670);
+context.lineTo(960, 550);
+context.stroke();
+context.closePath();
+
+
+context.beginPath();
+context.moveTo(960, 550);
+context.lineTo(910, 550);
+context.stroke();
+context.closePath();
+
+// 
+context.strokeRect(380, 630, 230, 77); 
+
+context.beginPath();
+context.moveTo(478, 580);
+context.lineTo(478, 630);
+context.stroke();
+context.closePath();
+
+// 
+
+context.strokeRect(380, 630, 230, 77); 
+context.fillText("Synchronous DC shock 2J/kg", 700, 530),
+context.fillText(this.data.Rweight*2, 700, 550),
+context.fillText("Estimated Joules ", 725, 550),
+
+context.beginPath();
+context.moveTo(478, 710);
+context.lineTo(478, 750);
+context.stroke();
+context.closePath();
+
+//
+context.strokeRect(380, 750,230, 150); 
+
+context.strokeRect(700, 750, 240, 70); 
+context.fillText("USE THE NEAREST HIGHE", 710, 770),
+context.fillText("VALUE FOR DC SHOCK", 710, 790),
+
+context.fillText("Use Paediatric Paddles for ",710, 840),
+context.fillText("Children <10 kg", 710, 860)
+
+// Second Flow Chart End
+
+
+
+
+// third flow chart   
+context.fillText("NON SHOCKABLE RHYTHM",1060,10),
+context.fillText("Asystole and PEA",1060,30),
+
+// 1st rectangle
+context.strokeRect(1060, 65, 230, 50);
+context.fillText("Asystole and PEA", 1090, 94),
+
+context.strokeStyle = '#000000';
+context.beginPath();
+context.moveTo(1175, 140);
+context.lineTo(1175, 200);
+context.stroke();
+context.closePath();
+
+// 2nd rectangle
+context.strokeRect(1060, 200, 230, 65);
+context.fillText("Ventilate with high", 1070, 230),
+context.fillText("O2 concentration", 1070, 245),
+
+
+context.strokeStyle = '#000000';
+context.beginPath();
+context.moveTo(1175, 262);
+context.lineTo(1175, 340);
+context.stroke();
+context.closePath();
+
+// 3rd rectangle
+
+context.strokeRect(1060, 350, 230, 65);
+context.fillText("Epinephrine",  1079, 365),
+context.fillText(this.data.Rweight*0.01,  1079, 375),
+context.fillText("mg",  1090, 375),
+context.fillText("10mcg/kg IV or IO", 1079, 395),
+
+
+context.beginPath();
+context.moveTo(1175, 420);
+context.lineTo(1175, 470);
+context.stroke();
+context.closePath();
+
+//  4th rectangle
+context.strokeRect(1000, 450, 100, 40);
+context.fillText("4min CPR", 1010, 475),
+
+context.beginPath();
+context.moveTo(1175, 470);
+context.lineTo(1100, 470);
+context.stroke();
+context.closePath();
+
+context.beginPath();
+context.moveTo(1025, 450);
+context.lineTo(1025, 380);
+context.stroke();
+context.closePath();
+
+context.beginPath();
+context.moveTo(1025, 380);
+context.lineTo(1050, 380);
+context.stroke();
+context.closePath();
+
+// 5th rectangle
+context.fillText("Warning!", 1070, 640),
+context.fillText(" Please ensure patients",1070, 690),
+context.fillText("are sedated or anaesthetised ", 1070, 710),
+context.fillText("for cardioversion, unless", 1070,730)
+context.fillText("patient already unconscious", 1070,750),
+
+context.strokeRect(1060, 600, 230, 230);
+
+// third chart end 
+}
+
+
 
     back() {
         this._location.back();
