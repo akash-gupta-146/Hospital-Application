@@ -13,5 +13,5 @@ export class FormService{
    getValue(){
        return (this.data);
    }
-   
+
 }

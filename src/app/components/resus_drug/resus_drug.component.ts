@@ -4,7 +4,7 @@ import { Validators, FormArray, FormBuilder} from '@angular/forms';
 import{ Router } from "@angular/router";
 import {Location} from '@angular/common';
 import { FormService } from 'app/providers/calculator.service';
-declare let $:any;
+
 
 @Component({
    selector :"resus",
@@ -18,11 +18,14 @@ export class Resus_DrugComponent implements OnInit{
       
     Rweight:number;
     data: any;
+    whatTime:any;
+
     ngOnInit(){  
         this.data = this.formService.getValue();
-        console.log(this.formService.getValue());  
+        console.log(this.formService.getValue()); 
+      
+        
     }
-
      next(){
         this.router.navigate(['/intubation'])
       }
