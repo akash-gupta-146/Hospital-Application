@@ -7,7 +7,8 @@
 }
 #bgImg{
     height:100vh;
-    background-image: url('http://inwavethemes.com/wordpress/inmedical/wp-content/uploads/2017/02/xslider4-1.jpg.pagespeed.ic.dTCthH8kgl.webp');
+    background: url('../../../assets/background.png');
+    background-size: cover; 
 }
 #h2_1{
     font-weight: 700;
@@ -30,4 +31,9 @@ button{
     background-color: #00726d;
     padding:9px;
     border-radius:6px;
+}
+#time{
+    margin-top: 50px;
+    font-size: medium;
+    color: #fff;
 }

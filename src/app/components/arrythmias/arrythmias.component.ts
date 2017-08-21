@@ -30,7 +30,10 @@ export class ArrythmiasComponent implements OnInit,  AfterViewInit{
         else 
             return 6;
     }
-
+    
+    back() {
+        this._location.back();
+    }
     ngAfterViewInit(){
         var canvas, context, canvaso, contexto;
         canvaso = document.getElementById('imageView');
@@ -498,9 +501,9 @@ context.closePath();
 
 context.strokeRect(1060, 350, 230, 65);
 context.fillText("Epinephrine",  1079, 365),
-context.fillText(this.data.Rweight*0.01,  1079, 375),
-context.fillText("mg",  1090, 375),
-context.fillText("10mcg/kg IV or IO", 1079, 395),
+context.fillText(this.data.Rweight*0.01 ,  1079, 385),
+context.fillText("mg",  1100, 395),
+context.fillText("10mcg/kg IV or IO", 1079, 410),
 
 
 context.beginPath();
@@ -545,7 +548,5 @@ context.strokeRect(1060, 600, 230, 230);
 
 
 
-    back() {
-        this._location.back();
-    }
+  
 }

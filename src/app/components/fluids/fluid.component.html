@@ -1,169 +1,259 @@
 
+<!-- header navigation -->
+<div id="div_1">
+    <div class="container">
+        <h2 id="h2_1">MediClinic</h2>
+        <h6 id="h6_1">Expertise You Can Trust</h6>
+        <div id="div_2">
+                <ul class="nav nav-tabs" style="color:#97b714;">
+                        <li><a routerLink="/home">Add Details</a></li>
+                        <li><a routerLink="/resus_drug">Resus Drug</a></li>
+                        <li><a routerLink="/intubation">Intibution</a></li>
+                        <li><a routerLink="/infusion">Infusion</a></li>
+                        <li  class="active"><a routerLink="/fluid">fluid</a></li>
+                        <li><a routerLink="/arrythmias">arrythmias</a></li>
+                    </ul>
+            <!-- <button routerLink="/home">Add Details</button>
+            <button routerLink="/resus_drug">Resus_Drug</button>
+            <button routerLink="/intubation">Intibution</button>
+            <button routerLink="/infusion">Infusion</button>
+            <button routerLink="/fluid">Fluids</button>
+            <button routerLink="/arrythmias">Arrythmias</button> -->
+        </div>
+    </div>
+</div>
+    
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Patient Details</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                Name: {{data.name}} <br><br> weight (in kg): {{data.weight}}<br><br> Hospital Number: {{data.HN}}<br><br> OPIATES/
+                SEDATIVES:20kg
+            </div>
+
+            <div class="col-lg-4">
+                DOB: {{data.DOB}} <br><br> Rounded weight (in kg): {{data.Rweight}} <br><br> Age: {{data.age}}
+            </div>
+
+            <div class="col-lg-4">
+                    ETT SIZE : {{((data.age)/4)+4}} <br><br> ETT ORAL LENGTH : {{((data.age)/2)+12}} <br><br> ETT NASAL LENGTH
+                    :{{((data.age)/2)+15}}
+                    <br><br>
+                </div>
+        </div><br><br><br>
+    </div>
+    <br><br><br>
+
+
+
+
+
+
+
+
+
+
 
 <div class="row">
-  <div class="col-lg-1">  <div class="col-lg-1"><span (click)="back()" class="glyphicon glyphicon-arrow-left"></span></div></div>
+    <div class="col-lg-1"> </div>
     <div class="col-lg-10">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3>Name</h3>
+                </div>
+                <div class="col-lg-6">
+                    <h3>MRN</h3>
+                </div>
+            </div>
 
+            <h2>FLUID CALCULATION</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    weight :{{data.weight}}
+                </div>
+                <div class="col-lg-4">
+                    <label>% dehydration</label> 3 bolous
+                </div>
+                <div class="col-lg-4">
+                    <label>Bolus Volume</label> {{data.weight}} mls<br> 1.0 mls/kg
+                </div>
+            </div>
+            <h3>Maintenance fluids calculation</h3>
+            <table class="table table-borderd">
+                <thead>
+                    <tr class="success">
+                        <td>Weight</td>
+                        <td>ml/kg/day</td>
+                        <td>mls</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0-10 kg</td>
+                        <td>100</td>
+                        <!--condition  -->
+                        <!-- <td *ngIf="data.Rweight <= 10">{{data.Rweight*100}}kg</td> -->
+                        <td>{{getMls(data.Rweight, 1)}}kg</td>
+                        <!--condition  -->
+                    </tr>
 
-<div class="container">    
-  <div class= "row">
-    <div class="col-lg-6">
-      <h3>Name</h3>
+                    <tr>
+                        <td>10-20 kg</td>
+                        <td>1000ml+ 50ml per each kg above 10</td>
+                        <!--conditions  -->
+                        <!-- <td *ngIf="data.weight >10 && data.weight <=20">{{1000+(data.weight-10)*50}}</td> -->
+                        <!-- <td *ngIf="data.weight < 10 || data.weight > 20">0</td> -->
+                        <td>{{getMls(data.Rweight, 2)}}kg</td>
+                    </tr>
+
+                    <tr>
+                        <td>20-70 kg</td>
+                        <td>1500 ml+20ml per each kg above 20</td>
+                        <!-- <td *ngIf="data.weight > 20 && data.weight <= 70">{{1500+((data.weight)*20)}}</td>    -->
+                        <!-- <td *ngIf="data.weight < 20 || data.weight > 70">0</td> -->
+                        <td>{{getMls(data.Rweight, 3)}}kg</td>
+                    </tr>
+                    <tr>
+                        <td>Over 70 kg</td>
+                        <td>2500 ml (adult requirment)</td>
+                        <!--conditions  -->
+                        <!-- <td *ngIf="data.Rweight > 70">2500</td>  -->
+                        <!-- <td *ngIf="data.Rweight <= 70">0</td> -->
+                        <td>{{getMls(data.Rweight, 4)}}kg</td>
+                        <!--conditions  -->
+                    </tr>
+                </tbody>
+            </table><br><br>
+
+            <div class="row">
+                <div clas="col-lg-6">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Total ml/kg/24 hours</td>
+                                <!--conditions  -->
+                                <td>{{totalMls}}</td>
+
+                            </tr>
+
+                            <tr>
+                                <td>Total maintenance over 48 hours</td>
+                                <td>{{totalMls*2}}</td>
+                            </tr>
+
+                            <tr>
+                                <td> Subtract bolus fluid given</td>
+                                <td>{{totalMls*2-20}}</td>
+                            </tr>
+                            <tr>
+                                <td> Rehydration value</td>
+                                <td>{{data.weight*3*10}}</td>
+                            </tr>
+                            <tr>
+                                <td> Total volume to be given over 48 hours</td>
+                                <td>{{((totalMls*2-20)+(data.weight*3*10)) | number : '1.2-2'}}</td>
+                            </tr>
+                            <tr>
+                                <td> Hourly fluid rate</td>
+                                <td> {{(((totalMls*2-20)+(data.weight*3*10))/48) | number : '1.2-2'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-6"></div>
+            </div>
+
+            <div class="boxed">
+                <h3>Choice of fluid:</h3>
+                <h4>Start with 0.9% Saline Once BG
+                    < 17 mmol/l OR falling by>5 mmol/l/hour change to 5% dextrose/0.45% saline </h4>
+            </div>
+
+            <h2>Insulin</h2>
+            <h4>Start IV Insulin infusion after 1-2 hours of IV fluids</h4><br>
+            <h4>Dilute 50 units Actrapid or Novorapid in 50 mls of 0.9% Saline to make a 1 unit/ml solution</h4><br>
+            <!--condition  -->
+            <h4>Initial Insulin Rate :</h4>
+            <h5 *ngIf="data.weight<=20">{{(data.weight*0.05)}}</h5>
+            <h5 *ngIf="data.weight > 20 && data.weight <= 35">{{data.weight*0.075}}</h5>
+            <h5 *ngIf="data.weight>35">{{data.weight*0.1}}</h5>
+            <!--condition  -->
+            <table class="table table-borderd">
+                <thead>
+                    <tr>
+                        <td>Weight</td>
+                        <td></td>
+                        <td>mls/hour</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0-20 kg</td>
+                        <td>0.05 units / kg / hour</td>
+                        <!--condition  -->
+                        <td>{{(data.Rweight*0.05) | number : '1.2-2'}}</td>
+                    </tr>
+                    <tr>
+                        <td>20-35 kg</td>
+                        <td>0.075 units / kg / hour</td>
+                        <!--condition  -->
+                        <td>{{(data.Rweight*0.075) | number : '1.2-2'}}</td>
+                    </tr>
+                    <tr>
+                        <td>>35 kg</td>
+                        <td>0.1 units / kg / hour</td>
+                        <!--condition  -->
+                        <td>{{data.Rweight*0.1}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
     </div>
-    <div class="col-lg-6">
-      <h3>MRN</h3>
-    </div>
-  </div>
-
-  <h2>FLUID CALCULATION</h2>
-  <div class="row">
-     <div class="col-lg-4">
-          weight :{{data.weight}}
-     </div>
-     <div class="col-lg-4">
-          <label>% dehydration</label>
-          3 bolous
-     </div>
-     <div class="col-lg-4">
-         <label>Bolus Volume</label>
-       {{data.weight}}  mls<br> 1.0 mls/kg   
-     </div>
-  </div>
-    <h3>Maintenance fluids calculation</h3>
-    <table class="table table-borderd">
-       <thead>
-          <tr class="success">
-            <td>Weight</td>
-            <td>ml/kg/day</td>
-            <td>mls</td>    
-          </tr>    
-       </thead>   
-        <tbody>
-            <tr>
-                <td>0-10 kg</td>
-                <td>100</td>
-                   <!--condition  -->
-                 <!-- <td *ngIf="data.Rweight <= 10">{{data.Rweight*100}}kg</td> -->
-                 <td>{{getMls(data.Rweight, 1)}}kg</td>
-                 <!--condition  -->
-            </tr>
-
-            <tr>
-              <td>10-20 kg</td>
-              <td>1000ml+ 50ml per each kg above 10</td>
-              <!--conditions  -->
-              <!-- <td *ngIf="data.weight >10 && data.weight <=20">{{1000+(data.weight-10)*50}}</td> -->
-              <!-- <td *ngIf="data.weight < 10 || data.weight > 20">0</td> -->
-              <td>{{getMls(data.Rweight, 2)}}kg</td>
-            </tr>
-
-            <tr>
-                <td>20-70 kg</td>
-                <td>1500 ml+20ml per each kg above 20</td>
-                <!-- <td *ngIf="data.weight > 20 && data.weight <= 70">{{1500+((data.weight)*20)}}</td>    -->
-                <!-- <td *ngIf="data.weight < 20 || data.weight > 70">0</td> -->
-                <td>{{getMls(data.Rweight, 3)}}kg</td>
-            </tr>
-            <tr>
-                <td>Over 70 kg</td> 
-                <td>2500 ml (adult requirment)</td> 
-                <!--conditions  -->
-                <!-- <td *ngIf="data.Rweight > 70">2500</td>  -->
-                <!-- <td *ngIf="data.Rweight <= 70">0</td> -->
-                <td>{{getMls(data.Rweight, 4)}}kg</td>
-                <!--conditions  -->
-            </tr>
-        </tbody> 
-    </table><br><br>
-   
-<div class="row">
-    <div clas="col-lg-6">
-     <table class="table table-striped">  
-        <tbody>
-            <tr>
-                <td>Total ml/kg/24 hours</td>
-                <!--conditions  -->
-                <td>{{totalMls}}</td>
-                
-            </tr>
-
-            <tr>
-              <td>Total maintenance over 48 hours</td>
-              <td>{{totalMls*2}}</td>
-            </tr>
-
-            <tr>
-                <td> Subtract bolus fluid given</td>
-                <td>{{totalMls*2-20}}</td> 
-            </tr>
-            <tr>
-                <td> Rehydration value</td> 
-                <td>{{data.weight*3*10}}</td> 
-            </tr>
-             <tr>
-                <td>  Total volume to be given over 48 hours</td> 
-                <td>{{(totalMls*2-20)+(data.weight*3*10)}}</td> 
-            </tr>
-            <tr>
-                <td> Hourly fluid rate</td> 
-                <td> {{((totalMls*2-20)+(data.weight*3*10))/48}}</td> 
-            </tr>
-        </tbody> 
-    </table>
-    </div>
- <div class="col-lg-6"></div>
 </div>
 
-    <div class="boxed">
-       <h3>Choice of fluid:</h3><h4>Start with 0.9% Saline	Once BG < 17 mmol/l OR falling by >5 mmol/l/hour change to 5% dextrose/0.45% saline	</h4>
-    </div>
-
-     <h2>Insulin</h2>
-     <h4>Start IV Insulin infusion after 1-2 hours of IV fluids</h4><br>
-     <h4>Dilute 50 units Actrapid or Novorapid in 50 mls of 0.9% Saline to make a 1 unit/ml solution</h4><br>
-    <!--condition  -->
-     <h4>Initial Insulin Rate :</h4><h5 *ngIf="data.weight<=20">{{data.weight*0.05}}</h5>
-                                <h5 *ngIf="data.weight > 20 && data.weight <= 35">{{data.weight*0.075}}</h5>
-                                <h5 *ngIf="data.weight>35">{{data.weight*0.1}}</h5>
-    <!--condition  -->
-     <table class="table table-borderd">
-         <thead>
-             <tr>
-                 <td>Weight</td>
-                 <td></td>
-                 <td>mls/hour</td>
-             </tr>
-         </thead>
-            <tbody>
-                <tr>
-                    <td>0-20 kg</td>
-                    <td>0.05 units / kg / hour</td>
-                    <!--condition  -->
-                    <td>{{data.Rweight*0.05}}</td>
-                </tr>
-                <tr>
-                    <td>20-35 kg</td>
-                    <td>0.075 units / kg / hour</td>
-                    <!--condition  -->
-                    <td>{{data.Rweight*0.075}}</td>
-                </tr>
-                <tr>
-                    <td>>35 kg</td>
-                    <td>0.1 units / kg / hour</td>
-                    <!--condition  -->
-                    <td>{{data.Rweight*0.1}}</td>
-                </tr>
-            </tbody>
-     </table>
-</div>
-
+<div class="container">
+        <div class="row">
+          <div class="col-lg-2"><button (click)="back()">Previous</button></div>
+          <div class="col-lg-8">
+            <ul>
+                    <button routerLink="/home">Add Details</button>
+                    <button routerLink="/resus_drug">Resus_Drug</button>
+                    <button routerLink="/intubation">Intibution</button>
+                    <button routerLink="/infusion">Infusion</button>
+                    <button routerLink="/fluid">Fluids</button>
+                    <button routerLink="/arrythmias">Arrythmias</button>
+            </ul>
+          </div>
+          <div class="col-lg-2"><button (click)="next()">Next</button></div>
+        </div>
       </div>
-       <div class="col-lg-1"><span (click)="next()" class="glyphicon glyphicon-arrow-right"></span></div>
-   </div>        
-
-<div class="row">
-    <div class="col-lg-1"><span (click)="back()" class="glyphicon glyphicon-arrow-left"></span></div>
-    <div class="col-lg-10"></div>
-    <div class="col-lg-1"><span (click)="next()" class="glyphicon glyphicon-arrow-right"></span></div>
-</div>
- 
+      
+      <br><br><br>
+      
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h3 id="footer">MediClinic</h3>
+              <h6 id="footer">Expertise You Can Trust</h6>
+              <div class="boxed">
+                 <h5> Resuscitation Drugs. Reference:</h5> APLS Guidelines Fourth Edition, BNFc, Guys & Lewshams, Frank Shan
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <h4>By:</h4>
+              <h6>
+                © Sachin Gohil - Senior Pharmacist PICU<br> <br>Dr Asrar Rashid - Consultant Intensivist PICU<br> <br>PICU Emergency Drugs
+                Calculator Version Expires 01 July 2010
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>

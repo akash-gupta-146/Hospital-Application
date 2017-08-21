@@ -21,7 +21,26 @@ export class IntubationComponent implements OnInit{
         console.log(this.formService.getValue());  
     }
 
-    
+  
+  
+    // detail(){
+    //     this.router.navigate(['/calculator'])
+    // }
+    // resus(){
+    //     this._location.back();
+    // }
+    // intibution(){
+    //     this.router.navigate(['/intubation'])
+    // }
+    // infusion(){
+    //     this.router.navigate(['/infusion'])
+    // } 
+    // fluid(){
+    //     this.router.navigate(['/fluid'])
+    // }
+    // arrythmias(){
+    //     this.router.navigate(['/arrythmias'])
+    // }
     next(){
         this.router.navigate(['/infusion'])
     }

@@ -8,8 +8,11 @@ import { FluidComponent } from "app/components/fluids/fluids.component";
 import { ArrythmiasComponent } from "app/components/Arrythmias/arrythmias.component";
 
 const routes: Routes = [
+    {
+        path:'', redirectTo:'/home', pathMatch:'full'
+    },
    {
-       path :'',
+       path :'home',
        component : CalculatorComponent
    },
     {

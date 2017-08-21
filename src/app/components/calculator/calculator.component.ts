@@ -20,7 +20,7 @@ export class CalculatorComponent implements OnInit{
         DOB: [''],
         age: [''],
         HN: [''],
-        weight: [' ',[Validators.required, Validators.minLength(1)]],
+        weight: ['',Validators.required],
         prescriber:[''],
        });
      }
@@ -32,22 +32,33 @@ export class CalculatorComponent implements OnInit{
    }
 
    ngAfterViewInit(){
-    function startTime() {
-      var today = new Date();
-      var h = today.getHours();
-      var m = today.getMinutes();
-      var s = today.getSeconds();
-      m = checkTime(m);
-      s = checkTime(s);
-      document.getElementById('time').innerHTML =
-      h + ":" + m + ":" + s;
-      var t = setTimeout(startTime, 500);
-  }
-  function checkTime(i) {
-      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-      return i;
-  }
    }
+
+   formatDate(date) {
+    var monthNames = [
+      "January", "February", "March",
+      "April", "May", "June", "July",
+      "August", "September", "October",
+      "November", "December"
+    ];
+  
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+  
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return day + ' ' + monthNames[monthIndex] + ' ' + year+ ' ' + ' ' + ' ' + ' ' + ' ' + ' '+strTime;
+  }
+  
+  e = this.formatDate(new Date());  
+ }
     
-}
+
+
  

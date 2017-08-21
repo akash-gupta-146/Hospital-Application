@@ -28,18 +28,18 @@ const template = [
   //     {role: 'selectall'}
   //   ]
   // },
-  {
-    label: 'View',
-    submenu: [
-      {role: 'reload'},
-      {role: 'forcereload'},
-      {role: 'toggledevtools'},
-      {role: 'resetzoom'},
-      {role: 'zoomin'},
-      {role: 'zoomout'},
-      {role: 'togglefullscreen'}
-    ]
-  },
+  // {
+  //   label: 'View',
+  //   submenu: [
+  //     {role: 'reload'},
+  //     {role: 'forcereload'},
+  //     {role: 'toggledevtools'},
+  //     {role: 'resetzoom'},
+  //     {role: 'zoomin'},
+  //     {role: 'zoomout'},
+  //     {role: 'togglefullscreen'}
+  //   ]
+  // },
   // {
   //   role: 'window',
   //   submenu: [

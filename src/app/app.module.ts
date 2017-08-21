@@ -28,7 +28,6 @@ import { ArrythmiasComponent } from "app/components/Arrythmias/arrythmias.compon
     InfusionComponent,
     FluidComponent,
     ArrythmiasComponent
-
   ],
   imports: [
     BrowserModule,

@@ -17,6 +17,24 @@ export class InfusionComponent implements OnInit{
         console.log(this.formService.getValue());  
     }
 
+    // detail(){
+    //     this.router.navigate(['/calculator'])
+    // }
+    // resus(){
+    //     this.router.navigate(['/resus_drug'])
+    // }
+    // intibution(){
+    //     this.router.navigate(['/intubation'])
+    // }
+    // infusion(){
+    //     this.router.navigate(['/infusion'])
+    // } 
+    // fluid(){
+    //     this.router.navigate(['/fluid'])
+    // }
+    // arrythmias(){
+    //     this.router.navigate(['/arrythmias'])
+    // }
     back() {
         this._location.back();
     }

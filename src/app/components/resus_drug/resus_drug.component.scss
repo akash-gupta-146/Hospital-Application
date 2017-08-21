@@ -1,23 +1,50 @@
-#boxed1{
-    border: 1px solid #333;
-    padding: 15px;
-    background-color: #f2f2f2;
+#h2_1{
+    font-weight: 700;
+    color: white;
+    text-align:left;
 }
-#boxed2{
-    border: 1px solid #333;
-    padding: 15px;
+#h6_1{
+    color:#fff;
+    font-weight:600;
+    text-align:left;
 }
- .glyphicon-arrow-left{
-     font-size: 17px;
-     background: red;
-     padding: 11px;
-     border-radius: 50%;
-     cursor: pointer;
- }
-    .glyphicon-arrow-right{
-     font-size: 17px;
-     background: red;
-     padding: 11px;
-     border-radius: 50%;
-     cursor: pointer;
- }
+#div_1{
+    background-color: #97b714;
+    position:relative;
+}
+#div_2{
+    position: absolute;
+    bottom: 0;
+    right: 80px;
+}
+button{
+    padding:4px;
+    background-color: #fff;
+    border-radius:4px;
+}
+#div_3{
+    position:absolute;
+}
+.footer{
+    color:#fff;
+    padding:50px;
+    background-color: #97b714;
+    // background-image: url('../../../assets/background.png');    
+}
+#footer{
+    color:#fff;
+    font-weight:700;
+    text-align: left;
+}
+.boxed{
+    // background-color: #97b714;
+    padding:15px;
+    opacity:07;
+}
+a{
+    color:#fff;
+}
+a:hover{
+    color:#333;
+} 
+
