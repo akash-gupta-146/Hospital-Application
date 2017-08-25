@@ -16,8 +16,8 @@ import { IntubationComponent } from "app/components/intubation/intubation.compon
 import { InfusionComponent } from "app/components/infusion/infusion.component";
 import { FluidComponent } from "app/components/fluids/fluids.component";
 import { FormService } from "app/providers/calculator.service";
-import { ArrythmiasComponent } from "app/components/Arrythmias/arrythmias.component";
-
+import { ArrythmiasComponent }  from "app/components/Arrythmias/arrythmias.component";
+import { CommonComponent } from 'app/components/common/common.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { ArrythmiasComponent } from "app/components/Arrythmias/arrythmias.compon
     IntubationComponent,
     InfusionComponent,
     FluidComponent,
-    ArrythmiasComponent
+    ArrythmiasComponent,
+    CommonComponent
   ],
   imports: [
     BrowserModule,

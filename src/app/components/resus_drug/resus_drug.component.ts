@@ -5,7 +5,6 @@ import{ Router } from "@angular/router";
 import {Location} from '@angular/common';
 import { FormService } from 'app/providers/calculator.service';
 
-
 @Component({
    selector :"resus",
    templateUrl:'./resus_drug.component.html',
@@ -23,9 +22,12 @@ export class Resus_DrugComponent implements OnInit{
     ngOnInit(){  
         this.data = this.formService.getValue();
         console.log(this.formService.getValue()); 
-      
-        
     }
+
+    print(){      
+        window.print();
+    }
+
     next(){
         this.router.navigate(['/intubation'])
     }

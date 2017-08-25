@@ -1,3 +1,14 @@
+// 
+#row_style{
+    border:1px solid #97b714;
+    margin-right:5px;
+    margin-bottom:5px;
+    padding:3px;
+    border-radius:4px;
+}
+// 
+
+
 #h2_1{
     font-weight: 700;
     color: white;
@@ -15,7 +26,7 @@
 #div_2{
     position: absolute;
     bottom: 0;
-    right: 80px;
+    right: 5px;
 }
 button{
     padding:4px;
@@ -23,7 +34,7 @@ button{
     border-radius:4px;
 }
 #div_3{
-    position:absolute;
+    // position:absolute;
 }
 .footer{
     color:#fff;
@@ -41,10 +52,37 @@ button{
     padding:15px;
     opacity:07;
 }
+
+
 a{
     color:#fff;
 }
 a:hover{
     color:#333;
+    cursor: pointer;
 } 
+.nav-tabs>li>#tabs2{
+    color:#000;
+}
 
+.btn-warning{
+    background-color: #f0ad4e !important;
+    border: 1px solid #eea236 !important;
+    color:#fff !important;
+    padding:10px;
+    font-size: 15px;
+    font-style: none !important;
+}
+.btn-warning:hover{
+    color:#fff;
+}
+
+img:hover{
+    cursor: pointer !important;
+}
+#printer{
+    background: transparent;
+}
+#btn{
+    float: right;
+}

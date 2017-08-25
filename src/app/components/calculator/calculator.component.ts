@@ -5,6 +5,8 @@ import{ Router } from "@angular/router";
 import { FormService } from "app/providers/calculator.service";
 
 
+
+
 @Component({
    selector :"calculator",
    templateUrl:'./calculator.component.html',
@@ -24,39 +26,71 @@ export class CalculatorComponent implements OnInit{
         prescriber:[''],
        });
      }
+
+     formatDate(date) {
+      var monthNames = [
+        "January", "February", "March",
+        "April", "May", "June", "July",
+        "August", "September", "October",
+        "November", "December"
+      ];
     
+      var day = date.getDate();
+      var monthIndex = date.getMonth();
+      var year = date.getFullYear();
+    
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var ampm = hours >= 12 ? 'pm' : 'am';
+      hours = hours % 12;
+      hours = hours ? hours : 12; // the hour '0' should be '12'
+      minutes = minutes < 10 ? '0'+minutes : minutes;
+      var strTime = hours + ':' + minutes + ' ' + ampm;
+      return day + ' ' + monthNames[monthIndex] + ' ' + year+ ' ' + ' ' + ' ' + ' ' + ' ' + ' '+strTime;
+    }
+    
+    e = this.formatDate(new Date());  
+
+     
+   
+
    save(){
       console.log(this.myForm.value);
       this.formService.storeData(this.myForm.value);
-      this.router.navigate(['resus_drug']);
+      this.router.navigate(['/common/resus_drug']);
    }
 
    ngAfterViewInit(){
    }
 
-   formatDate(date) {
-    var monthNames = [
-      "January", "February", "March",
-      "April", "May", "June", "July",
-      "August", "September", "October",
-      "November", "December"
-    ];
   
-    var day = date.getDate();
-    var monthIndex = date.getMonth();
-    var year = date.getFullYear();
+
+  //  formatDate(date) {
+  //   var monthNames = [
+  //     "January", "February", "March",
+  //     "April", "May", "June", "July",
+  //     "August", "September", "October",
+  //     "November", "December"
+  //   ];
   
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0'+minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
-    return day + ' ' + monthNames[monthIndex] + ' ' + year+ ' ' + ' ' + ' ' + ' ' + ' ' + ' '+strTime;
-  }
+  //   var day = date.getDate();
+  //   var monthIndex = date.getMonth();
+  //   var year = date.getFullYear();
   
-  e = this.formatDate(new Date());  
+  //   var hours = date.getHours();
+  //   var minutes = date.getMinutes();
+  //   var ampm = hours >= 12 ? 'pm' : 'am';
+  //   hours = hours % 12;
+  //   hours = hours ? hours : 12; // the hour '0' should be '12'
+  //   minutes = minutes < 10 ? '0'+minutes : minutes;
+  //   var strTime = hours + ':' + minutes + ' ' + ampm;
+  //   return day + ' ' + monthNames[monthIndex] + ' ' + year+ ' ' + ' ' + ' ' + ' ' + ' ' + ' '+strTime;
+  // }
+  
+  // e = this.formatDate(new Date());  
+
+  
+
  }
     
 

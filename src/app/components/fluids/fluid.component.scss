@@ -1,7 +1,17 @@
 td{
     padding:15px;
 }
-
+// 
+// 
+#row_style{
+    border:1px solid #97b714;
+    margin-right:5px;
+    margin-bottom:5px;
+    padding:3px;
+    border-radius:4px;
+}
+// 
+// 
 #h2_1{
     font-weight: 700;
     color: white;
@@ -19,7 +29,7 @@ td{
 #div_2{
     position: absolute;
     bottom: 0;
-    right: 80px;
+    right: 5px;
 }
 button{
     padding:4px;
@@ -41,9 +51,26 @@ button{
     border:1px solid #333;
     padding:15px;
 }
+
+
 a{
     color:#fff;
 }
 a:hover{
     color:#333;
+    cursor: pointer;
+} 
+.nav-tabs>li>#tabs2{
+    color:#000;
+}
+.btn-warning{
+    background-color: #f0ad4e !important;
+    border: 1px solid #eea236 !important;
+    color:#fff !important;
+    padding:10px;
+    font-size: 15px;
+    font-style: none !important;
+}
+.btn-warning:hover{
+    color:#fff;
 }

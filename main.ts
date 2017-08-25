@@ -6,6 +6,7 @@ import * as path from 'path';
 
 let win, serve;
 let contents = webContents;
+
 const args = process.argv.slice(1);
 serve = args.some(val => val === '--serve');
 
@@ -13,75 +14,24 @@ if (serve) {
   require('electron-reload')(__dirname, {
   });
 }
+// }
 const template = [
-  // {
-  //   label: 'Edit',
-    
-  //   submenu: [
-  //     {role: 'undo'},
-  //     {role: 'redo'},
-  //     {role: 'cut'},
-  //     {role: 'copy'},
-  //     {role: 'paste'},
-  //     {role: 'pasteandmatchstyle'},
-  //     {role: 'delete'},
-  //     {role: 'selectall'}
-  //   ]
-  // },
-  // {
-  //   label: 'View',
-  //   submenu: [
-  //     {role: 'reload'},
-  //     {role: 'forcereload'},
-  //     {role: 'toggledevtools'},
-  //     {role: 'resetzoom'},
-  //     {role: 'zoomin'},
-  //     {role: 'zoomout'},
-  //     {role: 'togglefullscreen'}
-  //   ]
-  // },
-  // {
-  //   role: 'window',
-  //   submenu: [
-  //     {role: 'minimize'},
-  //     {role: 'close'}
-  //   ]
-  // },
-  // {
-  //   role: 'help',
-  //   submenu: [ ]
-  // },
+  {
+    label: 'View',
+    submenu: [
+      {role: 'reload'},
+      {role: 'forcereload'},
+      {role: 'toggledevtools'},
+      {role: 'resetzoom'},
+      {role: 'zoomin'},
+      {role: 'zoomout'},
+      {role: 'togglefullscreen'}
+    ]
+  },
       {
         label: 'Print',
         click () { win.webContents.print({silent: false, printBackground: false, deviceName: ''})}
       },
-
-  //   {
-  //     label:'Drugs',
-  //     submenu: [
-  //     {
-  //       label: 'Resus Drugs',
-  //       click () {win.webContents.canGoForward()}
-  //     },
-  //      {
-  //       label: 'Intubation',
-  //       click () { }
-  //     },
-  //      {
-  //       label: 'Arrythmias',
-  //       click () { }
-  //     },
-  //      {
-  //       label: 'Infusion',
-  //       click () { }
-  //     },
-  //      {
-  //       label: 'Fluids',
-  //       click () { }
-  //     },
-     
-  //   ]
-  // },
 ]
 
 
@@ -93,22 +43,27 @@ function createWindow() {
 
   const electronScreen = screen;
   const size = electronScreen.getPrimaryDisplay().workAreaSize;
-
+ 
   // Create the browser window.
   win = new BrowserWindow({
     // frame:false,
+    backgroundColor: '#97b714',
     x: 0,
     y: 0,
     width: size.width,
-    height: size.height
+    height: size.height,
   });
+ 
+  
+  // win.setMenu(null);
 
+  
   // and load the index.html of the app.
   win.loadURL('file://' + __dirname + '/index.html');
   // Open the DevTools.
-  if (serve) {
-    win.webContents.openDevTools();
-  }
+  // if (serve) {
+  //   win.webContents.openDevTools();
+  // }
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -147,3 +102,4 @@ try {
   // Catch Error
   // throw e;
 }
+

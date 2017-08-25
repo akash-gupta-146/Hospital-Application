@@ -1,0 +1,56 @@
+// header
+.nav {
+    float: right;
+}
+a{
+    color:white;
+    font-weight:700;
+}
+a:hover{
+    color: #333;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #fff !important ;
+    color:#333  !important; 
+}
+.nav-tabs{
+    cursor: pointer;
+    align-items: right;
+}
+#h2_1{
+    font-weight: 700;
+    color: white;
+    text-align:left;
+}
+#h6_1{
+    color:#fff;
+    font-weight:600;
+    text-align:left;
+}
+#div_1{
+    background-color: #97b714;
+    position:relative;
+}
+
+// footer
+.footer{
+    color:#fff;
+    padding:50px;
+    background-color: #97b714;    
+}
+#footer{
+    color:#fff;
+    font-weight:700;
+    text-align: left;
+}
+#h2_1{
+    font-weight: 700;
+    color: white;
+    text-align:left;
+}
+#h6_1{
+    color:#fff;
+    font-weight:600;
+    text-align:left;
+}

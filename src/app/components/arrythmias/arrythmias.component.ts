@@ -17,16 +17,18 @@ export class ArrythmiasComponent implements OnInit,  AfterViewInit{
     ngOnInit(){  
          this.data = this.formService.getValue(); 
     }
-            
+      print(){      
+        window.print();
+    }      
     calculate1(getWeight){
         if(getWeight*0.1< 3)
-            return getWeight*0.1;
+            return (getWeight*0.1);
         else 
             return 3;
     }
     calculate2(getWeight){
         if(getWeight*0.1<6)
-            return getWeight*0.2;
+            return (getWeight*0.2);
         else 
             return 6;
     }
@@ -304,9 +306,9 @@ context.closePath();
 
 context.strokeStyle = '#000000';
 context.strokeRect(380, 260, 230, 77);
-context.fillText("Adenosine", 430, 290),
-context.fillText(this.calculate1(this.data.Rweight), 430, 310),
-context.fillText("mg", 450, 310),
+context.fillText("Adenosine", 430, 285),
+context.fillText(this.calculate1(this.data.Rweight), 430, 300),
+context.fillText("mg", 430, 315),
 context.fillText("100microgram/kg", 430, 330),
 
 // 9th
@@ -335,7 +337,7 @@ context.strokeStyle = '#000000';
 context.strokeRect(680, 260, 230, 77);
 context.fillText("Synchronous DC shock", 710, 290),
 context.fillText(this.data.Rweight*0.5, 710, 310),
-context.fillText("J/Kg", 730, 310),
+context.fillText("J/Kg", 750, 310),
 context.fillText("100microgram/kg", 710, 330),
 
 // 10 th
@@ -355,9 +357,9 @@ context.closePath();
 
 context.strokeStyle = '#000000';
 context.strokeRect(380, 379, 230, 77); 
-context.fillText("Adenosine", 420, 405),
-context.fillText(this.calculate2(this.data.Rweight), 420, 425),
-context.fillText("mg", 455, 425),
+context.fillText("Adenosine", 420, 400),
+context.fillText(this.calculate2(this.data.Rweight), 420, 415),
+context.fillText("mg", 420, 430),
 context.fillText("100microgram/kg", 420, 445),
 
 // 11th
@@ -502,7 +504,7 @@ context.closePath();
 context.strokeRect(1060, 350, 230, 65);
 context.fillText("Epinephrine",  1079, 365),
 context.fillText(this.data.Rweight*0.01 ,  1079, 385),
-context.fillText("mg",  1100, 395),
+context.fillText("mg",  1079, 395),
 context.fillText("10mcg/kg IV or IO", 1079, 410),
 
 
@@ -547,6 +549,28 @@ context.strokeRect(1060, 600, 230, 230);
 }
 
 
-
+formatDate(date) {
+    var monthNames = [
+      "January", "February", "March",
+      "April", "May", "June", "July",
+      "August", "September", "October",
+      "November", "December"
+    ];
+  
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+  
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return day + ' ' + monthNames[monthIndex] + ' ' + year+ ' ' + ' ' + ' ' + ' ' + ' ' + ' '+strTime;
+  }
+  
+  e = this.formatDate(new Date());  
   
 }
