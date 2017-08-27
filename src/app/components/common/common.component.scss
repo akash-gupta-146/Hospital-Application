@@ -5,13 +5,21 @@
 a{
     color:white;
     font-weight:700;
+    text-decoration: none;
 }
 a:hover{
     color: #333;
 }
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #e8f1c4;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
 .nav>li>a:focus, .nav>li>a:hover {
     text-decoration: none;
-    background-color: #fff !important ;
+    background-color: #e8f1c4 !important ;
     color:#333  !important; 
 }
 .nav-tabs{
@@ -21,12 +29,16 @@ a:hover{
 #h2_1{
     font-weight: 700;
     color: white;
-    text-align:left;
+    text-align: left;
+    position: relative;
+    top: 0px;
 }
 #h6_1{
-    color:#fff;
-    font-weight:600;
-    text-align:left;
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+    position: relative;
+    top: -5px;
 }
 #div_1{
     background-color: #97b714;
@@ -43,14 +55,4 @@ a:hover{
     color:#fff;
     font-weight:700;
     text-align: left;
-}
-#h2_1{
-    font-weight: 700;
-    color: white;
-    text-align:left;
-}
-#h6_1{
-    color:#fff;
-    font-weight:600;
-    text-align:left;
 }

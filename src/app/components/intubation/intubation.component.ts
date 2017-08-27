@@ -25,7 +25,9 @@ export class IntubationComponent implements OnInit{
         this.router.navigate(['/infusion'])
     }
 
-
+    print(){
+        window.print();
+    }
     formatDate(date) {
         var monthNames = [
           "January", "February", "March",

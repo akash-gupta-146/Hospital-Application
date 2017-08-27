@@ -16,7 +16,10 @@ export class InfusionComponent implements OnInit{
         this.data = this.formService.getValue();
         console.log(this.formService.getValue());  
     }
-
+    
+    print(){      
+        window.print();
+    }
     formatDate(date) {
         var monthNames = [
           "January", "February", "March",

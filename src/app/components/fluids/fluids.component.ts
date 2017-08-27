@@ -27,6 +27,9 @@ export class FluidComponent implements OnInit{
         console.log(this.formService.getValue());  
     }
     
+    print(){      
+        window.print();
+    }
     totalMls:any=0;
     
         getMls(mls:any, index:any){

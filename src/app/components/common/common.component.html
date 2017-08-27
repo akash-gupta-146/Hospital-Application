@@ -3,7 +3,7 @@
         <div class="container">
               <h2 id="h2_1">MediClinic</h2>
               <h6 id="h6_1">Expertise You Can Trust</h6>  
-              <h5 id="time">{{e}}</h5>
+              <h5 id="time" style="font-size: 14px;position: absolute;top: 75px;">{{e}}</h5>
               <div id="div_2">
                   <ul class="nav nav-tabs">
                       <li routerLinkActive="active"><a routerLink="/home">Add Details</a></li>
@@ -20,6 +20,25 @@
 
     <router-outlet></router-outlet>
 
+     <!-- buttons -->
+     <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><button class="btn btn-warning" id="btn2"><a routerLink="/home">Previous</a></button></div>
+              <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">     
+                  <div class="btn-group" id="btngrp1">           
+                      <button class="btn btn-warning"><a routerLink="/home">Add Details</a></button>
+                      <button class="btn btn-warning"><a routerLink="/common/resus_drug">Resus Drug</a></button>
+                      <button class="btn btn-warning"><a routerLink="/common/intubation">Intibution</a></button>
+                      <button class="btn btn-warning"><a routerLink="/common/infusion">Infusion</a></button>
+                      <button class="btn btn-warning"><a routerLink="/common/fluid">fluid</a></button>
+                      <button class="btn btn-warning"><a routerLink="/common/arrythmias">arrythmias</a></button>           
+                  </div>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><button class="btn btn-warning" id="btn1"><a routerLink="/common/intubation">Next</a></button></div>
+            </div>
+          </div>
+     <!-- end of buttons --><br><br><br><br><br>
+
     <!-- footer> -->
     <div class="footer">
             <div class="container">
@@ -27,10 +46,11 @@
                     <div class="col-lg-6">
                         <h3 id="footer">MediClinic</h3>
                         <h6 id="footer">Expertise You Can Trust</h6>
+                        <br><br>
                         <div class="boxed">
                             <h5> Resuscitation Drugs. Reference:</h5> APLS Guidelines Fourth Edition, BNFc, Guys & Lewshams, Frank Shan
                         </div>
-                    </div>
+                    </div><br><br><br>
                     <div class="col-lg-6">
                         <h4>By:</h4>
                         <h6>
