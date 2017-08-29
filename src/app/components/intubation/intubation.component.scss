@@ -54,11 +54,7 @@
     bottom: 0;
     right: 5px;
 }
-button{
-    padding:4px;
-    background-color: #fff;
-    border-radius:4px;
-}
+
 #div_3{
     position:absolute;
 }
@@ -79,7 +75,7 @@ button{
 
 
 a{
-    color:#fff;
+    color:#fff;text-decoration: none;
 }
 a:hover{
     color:#333;
@@ -88,17 +84,7 @@ a:hover{
 .nav-tabs>li>#tabs2{
     color:#000;
 }
-.btn-warning{
-    background-color: #f0ad4e !important;
-    border: 1px solid #eea236 !important;
-    color:#fff !important;
-    padding:10px;
-    font-size: 15px;
-    font-style: none !important;
-}
-.btn-warning:hover{
-    color:#fff;
-}
+
 
 
 
@@ -114,4 +100,8 @@ a:hover{
 
 hr{
     margin:7px;
+}
+
+.card {
+    box-shadow: 2px 2px 5px 0px;
 }

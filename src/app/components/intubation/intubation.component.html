@@ -151,11 +151,18 @@
       </div>
     </div>
   </div> -->
+
+
+
+
+
+
+
 <!-- patient details -->
 <div class="jumbotron">
   <div class="container">
     <div class="row">
-      <h3 style="font-weight:600; margin-left:20px;">Patient Details</h3>
+      <h3 style="font-weight:600; margin-left:20px;color:#718800">Patient Details</h3>
 
       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
         <div id="details">
@@ -234,13 +241,17 @@
 
 <div class="container">
   <div class="alert alert-warning">
-    <b> SIGN ONLY FOR THOSE DRUGS REQUIRED FOR INTUBATION.</b><br> Repeat doses require a second signature for administration.
-    Ensure that all drugs are diluted as indicated below.
+    <ul>
+      <li> <b> SIGN ONLY FOR THOSE DRUGS REQUIRED FOR INTUBATION.</b></li>
+      <li> <b>Repeat doses require a second signature for administration. Ensure that all drugs are diluted as indicated below.</b></li>
+    </ul>
   </div>
+
 </div>
 
 
 <div class="container">
+    <div class="card">
     <table class="table table-striped">
         <thead>
         <tr style="background-color:#97b714; font-weight:600; color:#fff;">
@@ -457,6 +468,7 @@
 
         </tbody>
       </table>
+    </div>
 </div>
 
 <div>
@@ -464,10 +476,72 @@
   />
   <br><br>
   <h6 style=" margin-right: -38px;float: right;"><b>Print</b></h6>
-  <!-- printer end -->
 </div>
-<br><br><br>
+
+<!-- buttons -->
+<div class="container">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <button class="btn btn-warning"><a routerLink="/common/resus_drug">Previous</a></button>
+    </div>
   
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <div class="btn-group">           
+            <button class="btn btn-warning"><a routerLink="/home">Home</a></button>
+            <button class="btn btn-warning"><a routerLink="/common/resus_drug">Resus Drug</a></button>
+            <button class="btn btn-warning"><a routerLink="/common/intubation">Intibution</a></button>
+            <button class="btn btn-warning"><a routerLink="/common/infusion">Infusion</a></button>
+            <button class="btn btn-warning"><a routerLink="/common/fluid">fluid</a></button>
+            <button class="btn btn-warning"><a routerLink="/common/arrythmias">arrythmias</a></button>           
+        </div>
+    </div>
+  
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <button class="btn btn-warning"><a routerLink="/common/infusion">Next</a></button>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- <div class="footer">
     <div class="container">
       <div class="row">

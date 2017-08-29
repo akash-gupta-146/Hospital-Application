@@ -78,7 +78,7 @@ button{
 
 
 a{
-    color:#fff;
+    color:#fff;text-decoration: none;
 }
 a:hover{
     color:#333;
@@ -97,4 +97,16 @@ a:hover{
 }
 .btn-warning:hover{
     color:#fff;
+}
+
+#insulin{
+     font-weight:600; 
+     color:#333;
+     background-color: rgb(187, 210, 95);
+     padding: 7px;
+     border-radius: 5px;
+}
+
+.card {
+    box-shadow: 2px 2px 5px 0px;
 }

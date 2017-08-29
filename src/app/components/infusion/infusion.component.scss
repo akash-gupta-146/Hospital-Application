@@ -76,7 +76,7 @@ button{
 
 
 a{
-    color:#fff;
+    color:#fff;text-decoration: none;
 }
 a:hover{
     color:#333;
@@ -97,7 +97,9 @@ a:hover{
     color:#fff;
 }
 
-
+.card {
+    box-shadow: 2px 2px 5px 0px;
+}
 
 
 

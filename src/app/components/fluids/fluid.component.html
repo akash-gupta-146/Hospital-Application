@@ -135,7 +135,7 @@
 <div class="jumbotron">
         <div class="container">
           <div class="row">
-            <h3 style="font-weight:600; margin-left:20px;">Patient Details</h3>
+            <h3 style="font-weight:600; margin-left:20px;color:#718800">Patient Details</h3>
       
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
               <div id="details">
@@ -245,6 +245,7 @@
                 </div>
             </div>
             <h4><b>Maintenance fluids calculation</b></h4>
+            <div class="card">
             <table class="table table-striped">
                 <thead>
                     <tr style="background-color:#97b714; font-weight:600; color:#fff;">
@@ -289,10 +290,12 @@
                         <!--conditions  -->
                     </tr>
                 </tbody>
-            </table><br><br>
+            </table>
+          </div><br><br>
 
             <div class="row">
                 <div clas="col-lg-6">
+                    <div class="card">
                     <table class="table table-striped">
                         <tbody>
                             <tr>
@@ -325,6 +328,7 @@
                             </tr>
                         </tbody>
                     </table>
+                  </div>
                 </div>
                 <div class="col-lg-6"></div>
             </div>
@@ -339,11 +343,12 @@
             <h4>Start IV Insulin infusion after 1-2 hours of IV fluids</h4>
             <h4>Dilute 50 units Actrapid or Novorapid in 50 mls of 0.9% Saline to make a 1 unit/ml solution</h4><br>
             <!--condition  -->
-            <h4 style="background-color:rgb(232, 241, 196);">Initial Insulin Rate :</h4>
-            <h5 *ngIf="data.weight<=20"  style="background-color:rgb(232, 241, 196); font-weight:600; color:#fff;">{{(data.weight*0.05)| number : '1.2-2'}}</h5>
-            <h5 *ngIf="data.weight > 20 && data.weight <= 35" style="background-color:rgb(232, 241, 196); font-weight:600; color:#fff;">{{(data.weight*0.075)| number : '1.2-2'}}</h5>
-            <h5 *ngIf="data.weight>35"  style="background-color:rgb(232, 241, 196); font-weight:600; color:#fff;">{{(data.weight*0.1)| number : '1.2-2'}}</h5>
+            
+            <h4 *ngIf="data.weight<=20" id="insulin">Initial Insulin Rate : {{(data.weight*0.05)| number : '1.2-2'}}</h4>
+            <h4 *ngIf="data.weight > 20 && data.weight <= 35" id="insulin">Initial Insulin Rate :  {{(data.weight*0.075)| number : '1.2-2'}}</h4>
+            <h4 *ngIf="data.weight>35" id="insulin">Initial Insulin Rate :  {{(data.weight*0.1)| number : '1.2-2'}}</h4>
             <!--condition  -->
+            <div class="card">
             <table class="table table-striped">
                 <thead>
                     <tr  style="background-color:#97b714; font-weight:600; color:#fff;">
@@ -373,6 +378,7 @@
                     </tr>
                 </tbody>
             </table>
+          </div>
         </div>
 
     </div>
@@ -384,8 +390,52 @@
     />
     <br><br>
     <h6 style=" margin-right: -38px;float: right;"><b>Print</b></h6>
-    <!-- printer end -->
 </div>
+
+<!-- buttons -->
+<div class="container">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <button class="btn btn-warning"><a routerLink="/common/infusion">Previous</a></button>
+    </div>
+  
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <div class="btn-group">           
+            <button class="btn btn-warning"><a routerLink="/home">Home</a></button>
+            <button class="btn btn-warning"><a routerLink="/common/resus_drug">Resus Drug</a></button>
+            <button class="btn btn-warning"><a routerLink="/common/intubation">Intibution</a></button>
+            <button class="btn btn-warning"><a routerLink="/common/infusion">Infusion</a></button>
+            <button class="btn btn-warning"><a routerLink="/common/fluid">fluid</a></button>
+            <button class="btn btn-warning"><a routerLink="/common/arrythmias">arrythmias</a></button>           
+        </div>
+    </div>
+  
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <button class="btn btn-warning"><a routerLink="/common/arrythmias">Next</a></button>
+    </div>
+  </div>
+<!-- end of buttons -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- <div class="container">
     <div class="row">
       <div class="col-lg-3"><button class="btn btn-warning" id="btn2"><a routerLink="/home">Previous</a></button></div>

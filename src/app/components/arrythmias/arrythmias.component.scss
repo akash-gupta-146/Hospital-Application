@@ -7,6 +7,9 @@
 //     border-radius:4px;
 // }
 // 
+a{
+	text-decoration: none;
+}
 #details{
     border: 1px solid #97b714;
     display: -webkit-inline-box;
@@ -60,9 +63,9 @@
  td{
     padding:15px;
 }
-canvas{
-    margin-top:40px;
-}
+// canvas{
+//     margin-top:40px;
+// }
 
 
 
@@ -85,11 +88,7 @@ canvas{
     bottom: 0;
     right: 5px;
 }
-button{
-    padding:4px;
-    background-color: #fff;
-    border-radius:4px;
-}
+
 
 .footer{
     color:#fff;
@@ -129,7 +128,28 @@ button{
 .btn-warning:hover{
     color:#fff;
 }
+#headline{
+	text-align:center; 
+	background-color: #e8f1c4;
+	padding:15px;
+	border-radius:5px;
+}
+#headline1{
+	text-align:center; 
+	background-color: #e8f1c4;
+	padding:15px;
+	border-radius:5px;
+}
+#headline2{
+	text-align:center; 
+	background-color: #e8f1c4;
+	padding:15px;
+	border-radius:5px;
+}
 
+.card {
+    box-shadow: 2px 2px 5px 0px;
+}
 // New code 
 
 
