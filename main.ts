@@ -14,29 +14,29 @@ if (serve) {
   require('electron-reload')(__dirname, {
   });
 }
-// }
-// const template = [
-//   {
-//     label: 'View',
-//     submenu: [
-//       {role: 'reload'},
-//       {role: 'forcereload'},
-//       {role: 'toggledevtools'},
-//       {role: 'resetzoom'},
-//       {role: 'zoomin'},
-//       {role: 'zoomout'},
-//       {role: 'togglefullscreen'}
-//     ]
-//   },
-//       {
-//         label: 'Print',
-//         click () { win.webContents.print({silent: false, printBackground: false, deviceName: ''})}
-//       },
-// ]
+
+const template = [
+  {
+    label: 'View',
+    submenu: [
+      {role: 'reload'},
+      {role: 'forcereload'},
+      {role: 'toggledevtools'},
+      {role: 'resetzoom'},
+      {role: 'zoomin'},
+      {role: 'zoomout'},
+      {role: 'togglefullscreen'}
+    ]
+  },
+      {
+        label: 'Print',
+        click () { win.webContents.print({silent: false, printBackground: false, deviceName: ''})}
+      },
+]
 
 
-// const menu = Menu.buildFromTemplate(template);
-// Menu.setApplicationMenu(menu);
+const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menu);
 
 
 function createWindow() {
@@ -55,7 +55,7 @@ function createWindow() {
   });
  
   
-  win.setMenu(null);
+  // win.setMenu(null);
 
   
   // and load the index.html of the app.
