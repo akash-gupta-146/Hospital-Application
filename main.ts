@@ -47,7 +47,7 @@ function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
     // frame:false,
-    backgroundColor: '#97b714',
+    backgroundColor: '#2196F3',
     x: 0,
     y: 0,
     width: size.width,

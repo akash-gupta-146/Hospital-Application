@@ -1,4 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --main-color: #2196F3;
+  --second-color: #64B5F6;
+}
+
+
+.primary-background{
+  background: var(--main-color);
+  color:white;
+}
+
+.secondary-background{
+  background:var(--second-color);
+  color:white;
+}
+
 html, body {
   margin: 0;
   padding: 0;

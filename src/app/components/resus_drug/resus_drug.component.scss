@@ -1,6 +1,6 @@
 // 
 // #row_style{
-//     border:1px solid #97b714;
+//     border:1px solid #2196F3;
 //     margin-right:5px;
 //     margin-bottom:5px;
 //     padding:3px;
@@ -9,17 +9,14 @@
 // }
 // 
 #details{
-    border: 1px solid #97b714;
+    border: 1px solid #2196F3;
     display: -webkit-inline-box;
     padding: 5px 10px 5px 10px;
     border-radius: 5px;
     background-color: #fff;
     margin:5px;
     font-weight: 600;
-    color:#6d8800
-}
-.jumbotron{
-    background-color:rgb(232, 241, 196);
+    color:#00579c
 }
 #printer{
     color:#333 !important;
@@ -41,7 +38,7 @@
     text-align:left;
 }
 #div_1{
-    background-color: #97b714;
+    background-color: #2196F3;
     position:relative;
 }
 #div_2{
@@ -56,7 +53,7 @@
 .footer{
     color:#fff;
     padding:50px;
-    background-color: #97b714;
+    background-color: #2196F3;
     // background-image: url('../../../assets/background.png');    
 }
 #footer{
@@ -65,7 +62,7 @@
     text-align: left;
 }
 .boxed{
-    // background-color: #97b714;
+    // background-color: #2196F3;
     padding:15px;
     opacity:07;
 }
@@ -93,5 +90,5 @@ button{
     text-decoration: none !important;
 }
 .card {
-    box-shadow: 2px 2px 5px 0px;
+    border:1px solid lightgray;
 }
