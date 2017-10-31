@@ -4,6 +4,55 @@
   --second-color: #64B5F6;
 }
 
+@keyframes slide_in{
+  0% {
+    transform:  translate(-40px,0px)  ;
+    opacity: 0;
+    }
+  100% {
+    transform:  translate(0px,0px)  ;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up-fade-in{
+  0% {
+      opacity:0;
+      transform:  translate(0px,40px)  ;
+  }
+  100% {
+      opacity:1;
+      transform:  translate(0px,0px)  ;
+  }
+} 
+
+@keyframes slide-left-fade-in{
+  0% {
+      opacity:0;
+      transform:  translate(40px,0px)  ;
+  }
+  100% {
+      opacity:1;
+      transform:  translate(0px,0px)  ;
+  }
+} 
+
+.alert-warning, .flow-right{
+  animation-name: slide-left-fade-in;
+  animation-duration: 0.7s;
+}
+
+.patient-details{
+  animation: slide_in 0.5s;
+}
+
+.slide_from_left{
+  animation: slide_in 0.5s;
+}
+.slide_from_right{
+  animation: slide-left-fade-in 0.5s;
+}
+
 
 .primary-background{
   background: var(--main-color);
@@ -19,4 +68,9 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+}
+
+.animate-card{
+  animation-name: slide-up-fade-in;
+  animation-duration: 1s;
 }
